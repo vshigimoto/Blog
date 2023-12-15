@@ -6,14 +6,14 @@ Database:
   Main:
     Host: '127.0.0.1'
     SslMode: 'disable'
-    Port: '5433'
+    Port: '5432'
     User: 'postgres'
     Password: 'postgres'
     DbName: 'book'
   Replica:
       Host: '127.0.0.1'
       SslMode: 'disable'
-      Port: '5433'
+      Port: '5432'
       User: 'postgres'
       Password: 'postgres'
       DbName: 'hotel'
