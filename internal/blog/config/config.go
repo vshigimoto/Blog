@@ -6,11 +6,11 @@ type Config struct {
 }
 
 type Database struct {
-	Main    DbNone `yaml:"Main"`
-	Replica DbNone `yaml:"Replica"`
+	Main    DbNode `yaml:"Main"`
+	Replica DbNode `yaml:"Replica"`
 }
 
-type DbNone struct {
+type DbNode struct {
 	Host     string `yaml:"Host"`
 	User     string `yaml:"User"`
 	Port     int    `yaml:"Port"`
