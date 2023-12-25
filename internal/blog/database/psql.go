@@ -6,10 +6,6 @@ import (
 	"github.com/vshigimoto/Blog/internal/blog/config"
 )
 
-type Db struct {
-	db *sqlx.DB
-}
-
 type Config config.DbNode
 
 func (c Config) dsn() string {
@@ -22,7 +18,7 @@ func (c Config) dsn() string {
 	)
 }
 
-func New(cfg config.DbNode) (*Db, error) {
+func New(cfg config.DbNode) (*sqlx.DB, error) {
 	conf := Config(cfg)
 
 	dbConn, err := sqlx.Connect("pgx", conf.dsn())
@@ -32,7 +28,5 @@ func New(cfg config.DbNode) (*Db, error) {
 	if err := dbConn.Ping(); err != nil {
 		return nil, err
 	}
-	return &Db{
-		db: dbConn,
-	}, nil
+	return dbConn, nil
 }
