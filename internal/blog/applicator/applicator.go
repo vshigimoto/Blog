@@ -45,4 +45,5 @@ func (a *Applicator) Run() {
 	}()
 
 	rep := repository.New(mainDb, replicaDb)
+	
 }
