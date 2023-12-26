@@ -1,9 +1,10 @@
 package applicator
 
 import (
+	"github.com/gin-gonic/gin"
 	"github.com/vshigimoto/Blog/internal/blog/config"
 	"github.com/vshigimoto/Blog/internal/blog/database"
-	"github.com/vshigimoto/Blog/internal/blog/repository"
+	"github.com/vshigimoto/Blog/internal/blog/server"
 	"go.uber.org/zap"
 )
 
@@ -44,6 +45,6 @@ func (a *Applicator) Run() {
 		a.l.Info("replicaDb closed")
 	}()
 
-	rep := repository.New(mainDb, replicaDb)
-	
+	// move to the handlers in server package
+	server := server.New(gin.Default(), a.cfg)
 }
