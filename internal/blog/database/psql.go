@@ -3,7 +3,7 @@ package database
 import (
 	"fmt"
 	"github.com/jmoiron/sqlx"
-	"github.com/vshigimoto/Blog/internal/blog/config"
+	"github.com/vshigimoto/LinkedIn-clone/internal/blog/config"
 )
 
 type Config config.DbNode

@@ -3,7 +3,7 @@ package user
 import (
 	"context"
 	"fmt"
-	entity "github.com/vshigimoto/Blog/internal/blog/entity/user"
+	entity "github.com/vshigimoto/LinkedIn-clone/internal/blog/entity/user"
 )
 
 func (r *Repo) Create(ctx context.Context, user entity.User) (int, error) {

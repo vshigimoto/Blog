@@ -1,4 +1,4 @@
-module github.com/vshigimoto/Blog
+module github.com/vshigimoto/LinkedIn-clone
 
 go 1.21.1
 

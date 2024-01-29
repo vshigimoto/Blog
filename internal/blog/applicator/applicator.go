@@ -2,8 +2,8 @@ package applicator
 
 import (
 	"github.com/redis/go-redis"
-	"github.com/vshigimoto/Blog/internal/blog/config"
-	"github.com/vshigimoto/Blog/internal/blog/database"
+	"github.com/vshigimoto/LinkedIn-clone/internal/blog/config"
+	"github.com/vshigimoto/LinkedIn-clone/internal/blog/database"
 	"go.uber.org/zap"
 )
 
