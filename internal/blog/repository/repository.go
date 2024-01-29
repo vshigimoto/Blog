@@ -1,12 +1,17 @@
 package repository
 
-import "github.com/jmoiron/sqlx"
+import (
+	"context"
+	entity "github.com/vshigimoto/Blog/internal/blog/entity/user"
+)
 
-type Repo struct {
-	main *sqlx.DB
-	repo *sqlx.DB
+type Repository struct {
+	UserRepo
 }
 
-func New(repo, main *sqlx.DB) *Repo {
-	return &Repo{main: main, repo: repo}
+type UserRepo interface {
+	Create(ctx context.Context, user entity.User) (int, error)
+	Get(ctx context.Context, userID int) (entity.User, error)
+	Delete(ctx context.Context, userID int) error
+	Update(ctx context.Context, user entity.User) error
 }

@@ -1,7 +1,6 @@
 # LinkedIn clone written on golang
 
 #### List of what i used in project:
-* [gin](https://github.com/gin-gonic/gin) - Gin Web Framework
 * [sqlx](https://github.com/jmoiron/sqlx) - Extensions to database/sql.
 * [pgx](https://github.com/jackc/pgx) - PostgreSQL driver and toolkit for Go
 * [cleanenv](https://github.com/ilyakaznacheev/cleanenv) - Go configuration loader

@@ -14,8 +14,10 @@ func main() {
 			return
 		}
 	}(logger)
+
 	l := logger.Sugar()
 	l = l.With(zap.String("app", "Blog"))
+
 	var cfg config.Config
 	err := cleanenv.ReadConfig("config/blog/config.yaml", &cfg)
 	if err != nil {
