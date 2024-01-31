@@ -2,7 +2,7 @@ package repository
 
 import (
 	"context"
-	entity "github.com/vshigimoto/LinkedIn-clone/internal/blog/entity/user"
+	"github.com/vshigimoto/LinkedIn-clone/internal/user/entity"
 )
 
 type Repository struct {

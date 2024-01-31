@@ -1,9 +1,8 @@
 package applicator
 
 import (
-	"github.com/redis/go-redis"
-	"github.com/vshigimoto/LinkedIn-clone/internal/blog/config"
-	"github.com/vshigimoto/LinkedIn-clone/internal/blog/database"
+	"github.com/vshigimoto/LinkedIn-clone/internal/user/config"
+	"github.com/vshigimoto/LinkedIn-clone/internal/user/database"
 	"go.uber.org/zap"
 )
 
@@ -47,9 +46,10 @@ func (a *Applicator) Run() {
 		a.l.Info("replicaDb closed")
 	}()
 
-	rdb := redis.NewClient(&redis.Options{
-		Addr:     a.cfg.Database.Redis.Addr,
-		Password: a.cfg.Database.Redis.Password, // no password set
-		DB:       a.cfg.Database.Redis.DB,       // use default DB
-	})
+	// add in repository
+	//rdb := redis.NewClient(&redis.Options{
+	//	Addr:     a.cfg.Database.Redis.Addr,
+	//	Password: a.cfg.Database.Redis.Password, // no password set
+	//	DB:       a.cfg.Database.Redis.DB,       // use default DB
+	//})
 }

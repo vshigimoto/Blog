@@ -1,0 +1,31 @@
+version: '3'
+services:
+  app:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.migrations
+    ports:
+      - '8080:8080'
+
+  postgres:
+      image: postgres
+      restart: always
+      environment:
+        POSTGRES_USER: dev
+        POSTGRES_PASSWORD: dev
+        POSTGRES_DB: dev
+      ports:
+        - '5432:5432'
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile.migrations
+    command: sh -c 'goose -dir=migrations postgres "host=postgres port=5432 user=dev password=dev dbname=dev sslmode=disable" up'
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

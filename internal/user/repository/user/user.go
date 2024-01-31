@@ -1,14 +1,16 @@
 package user
 
-import "github.com/jmoiron/sqlx"
+import (
+	"database/sql"
+)
 
 const userTable = "users"
 
 type Repo struct {
-	DB *sqlx.DB
+	DB *sql.DB
 }
 
-func NewRepo(DB *sqlx.DB) *Repo {
+func NewRepo(DB *sql.DB) *Repo {
 	return &Repo{
 		DB: DB,
 	}

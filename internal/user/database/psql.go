@@ -1,9 +1,9 @@
 package database
 
 import (
+	"database/sql"
 	"fmt"
-	"github.com/jmoiron/sqlx"
-	"github.com/vshigimoto/LinkedIn-clone/internal/blog/config"
+	"github.com/vshigimoto/LinkedIn-clone/internal/user/config"
 )
 
 type Config config.DbNode
@@ -18,10 +18,10 @@ func (c Config) dsn() string {
 	)
 }
 
-func New(cfg config.DbNode) (*sqlx.DB, error) {
+func New(cfg config.DbNode) (*sql.DB, error) {
 	conf := Config(cfg)
 
-	dbConn, err := sqlx.Connect("pgx", conf.dsn())
+	dbConn, err := sql.Open("pgx", conf.dsn())
 	if err != nil {
 		return nil, err
 	}
