@@ -6,8 +6,9 @@ type Config struct {
 }
 
 type Database struct {
-	Main    DbNode `yaml:"Main"`
-	Replica DbNode `yaml:"Replica"`
+	Main    DbNode    `yaml:"Main"`
+	Replica DbNode    `yaml:"Replica"`
+	Redis   RedisNode `yaml:"Redis"`
 }
 
 type DbNode struct {
@@ -17,6 +18,12 @@ type DbNode struct {
 	Password string `yaml:"Password"`
 	DbName   string `yaml:"DbName"`
 	SslMode  string `yaml:"SslMode"`
+}
+
+type RedisNode struct {
+	Addr     string `yaml:"Addr"`
+	Password string `yaml:"Password"`
+	DB       int    `yaml:"DB"`
 }
 
 type HttpServer struct {
